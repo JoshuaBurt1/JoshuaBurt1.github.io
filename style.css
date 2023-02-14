@@ -1,130 +1,98 @@
-/* Typography */ 
-html {
-    font-family: 'Fira Sans', sans-serif; 
+*,*:before,*:after{
+    box-sizing: inherit; /*box-model format: allows padding to alter box without having to change height and width*/
 }
-h1, h2, h3 {
-    font-weight: 600; 
-}
-p {
-    font-weight: 300; 
-    line-height: 18px; 
+html { 
+    font-family: "Helvetica";
+    box-sizing: border-box;
 }
 
-/* Layout */ 
-.wrapper {
-    width: 80%; 
-    margin: 0 auto;
-    background-color: #f8f3f3; 
-    border-radius: 20px;
-    padding: 20px
-}
-.flex {
-    display:flex;
-    gap: 20px;  
-}
-#features > div {
-    flex: 1; 
-}
-img {
-    max-height: 300px; 
-    width: auto; 
-}
-main section {
-    padding: 20px 20px 0 20px; 
+body{ /*2) Background image to body*/
+    background-image: url(antarctica.avif);
+    background-size: cover; 
+    background-position: center;
+    max-width:100%;
+    height: auto;
+    filter:contrast(130.5%);
 }
 
-/* Tables --> 2) style added to the two tables within index.html */
-table{
-    table-layout: fixed; /*equally spaces table columns*/
-    width: 100%; /*width of table to webpage width*/
-    border-collapse: collapse; /*no border between columns and row*/
-    border: 2px solid #dddddd; /*border line around table visible*/
-    font-size: 12px; 
-    text-align: left; /*text aligned to left of column*/
+img { /*3) filter function usage: brightness, hue-rotate, saturate, contrast*/
+    max-width:90%;
+    max-height:90%; /*6) 90% of div.wrapper and centre it within the .wrapper div.*/
+    display: block; /*centers image*/
+    margin: auto; /*centers image*/
+    margin-bottom:40px;
+    filter: brightness(270%) hue-rotate(104deg) saturate(1000%) contrast(1000%); /*note: filter:opacity affects child elements (ie. img)*/
+}
+section{
+    background-color: rgba(3, 89, 182, 0.29); /*6) Add a background colour using an appropriate colour measurement.*/
+    padding: 20px;
+}
+
+img:hover{ /*4) responsive image code*/
+    transform: scaleX(-1); /*movement with CSS, no javascript*/
+}
+
+.wrapper{  
+    color: #333; 
+    width: 80vw; /*5) wrapper to 80% of the viewport width*/
+    margin: auto; /*centers wrapper to viewport inside wrapper*/
+    padding: 41px;
+    border-radius: 25px;  
+    background-color: rgba(3, 89, 182, 0.29); /*5) Add a background colour and border to div.wrapper*/
 } 
-thead th {
-    text-decoration: underline; /*adds underline to table head*/
+
+.flex{ /*b) div class "flex" added */
+    background: #ccc;
+    height: 431px;
+    max-width: 100%;
+    border-style: inset;
+    padding: 33px;  
+    display: inline-block;
+    vertical-align: middle; /*aligns content to center, vertically */
+    overflow: scroll;
 }
-th, td {
-     padding: 10px; /*padding around the text, column*row area size*/
+
+header, footer{
+    background: #777777;
+    height: 60px;
+}
+
+header{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+footer{
+    padding: 10px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.wrapper header h1{
+    font-size: 36.9px;
+    text-align: left;
+    padding:10px;
 }  
-#playlist table tbody tr:nth-child(odd) { /*descendant combinator - affects only table within id #playlist*/
-    background-color: #ffcbcb;
-}
-#playlist table tbody tr:nth-child(even) {
-    background-color: #ffa5a5;
-}
-#features table{
-    border: 2px solid #dddddd; /*border line around table visible*/
-    font-size: 14px; 
-    background-color: #ffcbcb;
-}
-#features table tbody tr:nth-child(1){ /*descendant combinator - affects only table within id #features*/
-    background-color: #fa7dd4;
-}
-#features table tbody tr:nth-child(2){
-    background-color: #fb8bd9;
-}
-#features table tbody tr:nth-child(3){
-    background-color: #f9b5e6;
+
+p {
+    color: #000000; /*e) all except p class are color #333 --- element selector (2)*/
 }
 
-
-/* Buttons --> 3) style navigation links as buttons; default link styling */
-nav a {
-    text-decoration: none; /*removes underline from navigation link*/
-    padding: 10px; /*padding around navigation link text to form button appearance*/
-    line-height: 3; /*area above and below navigation links*/
-    font-weight:700;
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px; 
-}
-nav a:link { /*link change when clicking link*/
-    background-color: #e8ccf0;
-    color: #333;
-    display: inline;
-    padding-right: 30px;
-}
-nav a:visited,
-nav a:focus { /*link change during cursor no-hover action*/
-    background-color:#eda2ce; 
-    color: #fff;
-}
-nav a:hover { /*link change during cursor hover action*/
-    background-color: #eb51e6;
-    color: #fff;
-    font-weight:500;  /*font weight changes during hover action*/
-}
-nav a:active { /*link change when clicking link*/
-    background: #333; 
-    color: #fff;
-    font-weight:500;  
+ol {
+    list-style-position: inside; /*keeps ordered list elements in div .flex inside box*/
 }
 
-/*4) styling other links*/
-a:link {
-    color: #002aff;
-    font-weight: bold;
-}
-a:visited {
-    color: #f700ff;
-    font-weight: bold;
-}
-a:focus { /*focused and hovered links with different background colors & underlined*/
-    border-bottom: 1px solid; 
-    background: #eb51e6;
-}
-a:hover {
-    border-bottom: 1px solid;
-    background: #eda2ce; 
-}
-a:active { /*inverted color scheme  #eb51e6 --> #14AE19; #eda2ce --> #125D31 */
-    background: #14AE19;
-    color: #125D31;
-}
-
-/*5) Style ordered and unordered list */
-li:nth-of-type(odd) { /*c) every odd bullet point bold --- pseudo element selector */
+li:nth-of-type(odd) { /*c) every odd bullet point bold --- pseudo element selector (3) */
     font-weight: bold; 
 }
+
+footer p{ /*a) four different types of selectors --- Combinators, Descendant Selector (4) */
+    color: orange;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 25px; 
+    float:left;
+    padding-left: 10px; 
+} 
