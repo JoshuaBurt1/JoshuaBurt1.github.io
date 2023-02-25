@@ -1,98 +1,377 @@
-*,*:before,*:after{
-    box-sizing: inherit; /*box-model format: allows padding to alter box without having to change height and width*/
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+html {
+	margin: 0;
+	padding: 0;
+	}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	}
+h3 { 
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #7D775C;
+	}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #5116d0;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #89858f;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: #190544;
+	}
+abbr {
+	border-bottom: none;
+	}
+
+
+/* specific divs */
+
+.intro { 
+	min-width: 470px;
+	width: 100%;
+	}
+
+header h1 { 
+	background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
+	margin-top: 10px;
+	display: block;
+	width: 219px;
+	height: 87px;
+	float: left;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+
+header h2 { 
+	background: transparent url(http://csszengarden.com/001/h2.gif) no-repeat top left; 
+	margin-top: 58px; 
+	margin-bottom: 40px; 
+	width: 200px; 
+	height: 18px; 
+	float: right;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+header {
+	padding-top: 20px;
+	height: 87px;
 }
-html { 
-    font-family: "Helvetica";
+
+.summary {
+	clear: both; 
+	margin: 20px 20px 20px 10px; 
+	width: 250px; 
+	height: 250px;
+	border-radius: 10px;
+	font-weight: bold;
+	background-color: rgba(246, 246, 246, 0.91); 
+	float: left;
+	}
+.summary p {
+	font: italic 1.1em/2.2 georgia; 
+	text-align: center;
+	}
+
+.preamble {
+	clear: right; 
+	padding: 0px 10px 0 10px;
+	}
+.supporting {	
+	padding-left: 10px; 
+	margin-bottom: 40px;
+
+	}
+
+footer { 
+	text-align: center; 
+	}
+footer a:link, footer a:visited { 
+	margin-right: 20px; 
+	}
+
+.sidebar {
+	margin-left: 600px; 
+	position: absolute; 
+	top: 0; 
+	right: 0;
+	float:left;	
+	}
+.sidebar .wrapper { 
+	font: 10px verdana, sans-serif; 
+	background: whitesmoke top left repeat-y; 
+	padding: 10px; 
+	margin-top: 150px; 
+	width: 130px; 
+	}
+.sidebar h3.select { 
+	background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left; 
+	margin: 10px 0 5px 0; 
+	width: 97px; 
+	height: 16px; 
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+.sidebar h3.archives { 
+	background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left; 
+	margin: 25px 0 5px 0; 
+	width:57px; 
+	height: 14px; 
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+.sidebar h3.resources { 
+	margin: 25px 0 5px 0; 
+	width:63px; 
+	height: 10px; 
+	background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left; 
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	}
+.sidebar li {
+	line-height: 1.3em; 
+	background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center; 
+	display: block; 
+	padding-top: 5px; 
+	margin-bottom: 5px;
+	list-style-type: none;
+	}
+.sidebar li a:link {
+	color: #988F5E;
+	}
+.sidebar li a:visited {
+	color: #B3AE94;
+	}
+
+
+.extra1 {
+	position: absolute; 
+	top: 40px; 
+	right: 0; 
+	width: 148px; 
+	height: 110px;
+	}
+
+	/*
+	1.) includes a CSS file that contains valid, well-formatted, error-free CSS and
+helpful comments where applicable.  -----------
+
+2.) includes at least one example of a type selector, a class selector, an id
+selector, an attribute selector, a pseudo-class selector or pseudo-element
+selector, a descendant combinator, a child combinator, a direct sibling
+combinator and a general sibling combinator. ----------
+*/
+/*type selector --> all h3 tags have increased font size*/
+h3 {
+	font-size: 2em;
+}
+
+/*class selector --> all .wrapper classes have property and value changed */
+.wrapper {
+	border: red 2px dashed;
+	padding: 5px;
+}
+/*id selector --> all #zen-summary classes have property and value changed*/
+#zen-summary {
+	border: red 2px solid;
+	padding: 5px;
+  }
+/*attribute selector --> selects href matching "/example/index"  */
+a[href="/examples/index"] {
+	color: black;
+	font-size: 1.5em;
+  }
+
+/*pseudo-class selecto --> every other p selector is colored red*/
+p:nth-of-type(2n) {
+	color:red;
+}
+
+/*pseudo-element selector --> first letter of every p  */
+p::first-letter {
+    font-size: 1.8em;
+    font-weight: bold;
+}   
+
+/*descendant combinator --> highlights a selector if a descendant of p*/
+p a{
+	background-color: whitesmoke;
+    font-style: italic;
+}
+/*child combinator --> affects child of .pramble selector*/
+.preamble > h3 {
+	font-size: 3em;
+	text-shadow: 0 0 2px #FF0000, 0 0 2px #0000FF; 
+  }
+
+/*direct sibling combinator --> affects the direct sibling of h3 (first paragraph selector)*/
+h3 + p {
+	font-weight: bold;
+  }
+
+/*general sibling combinator --> if p is a sibling of h3 (all p), then color will change */
+h3 ~ p{
+	color:blueviolet;
+
+}
+
+/*
+3.) incorporates a background image or gradient to enhance visual
+appearance of the interface. --------------
+*/
+.page-wrapper{
+	background-image: url("assets/blocks.jpg") no-repeat top left; 
+	padding: 0 175px 0 110px;  
+	margin: 0; 
+	position: relative;
+	max-width: 57vw;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(246, 246, 246, 0.91); /*this is the translucent white page wrapper*/
+	margin-top: 10em;
+	margin-bottom: 10em;
+	border-radius: 10px;
+}
+body { 
+	font-size: 1.8em;
+	background-image: url("assets/blocks2.webp"); /*this is the blue block background image*/
+	font: 75% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #555753;  
+	margin: 0; 
+	padding: 0;
+}
+/*
+4.) incorporates colour while still maintaining readability/accessibility ------
+*/
+
+/*
+5.) incorporates at two custom web fonts and appropriate font-sizing and
+units*/
+/*i.) /*First custom webfont - Externally hosted web-font*/
+@font-face {
+    font-family: 'Architects Daughter';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4w.woff2) format('woff2');
+}
+h1, h2, h3 {
+    font-family:'Architects Daughter', cursive; 
+	font-weight: bold;  
+}
+/*ii.) Second custom webfont - locally hosted web-font */
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('assets/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+p, table{
+    font-family: 'open_sansregular', sans-serif;
+}
+
+/*6.) Demonstrates understanding of the box model through the addition of
+padding and margins to give a sense of space between elements. --------------------
+*/
+html{
     box-sizing: border-box;
 }
-
-body{ /*2) Background image to body*/
-    background-image: url(antarctica.avif);
-    background-size: cover; 
-    background-position: center;
-    max-width:100%;
-    height: auto;
-    filter:contrast(130.5%);
+*,*:before,*:after{
+    box-sizing: inherit;
 }
-
-img { /*3) filter function usage: brightness, hue-rotate, saturate, contrast*/
-    max-width:90%;
-    max-height:90%; /*6) 90% of div.wrapper and centre it within the .wrapper div.*/
-    display: block; /*centers image*/
-    margin: auto; /*centers image*/
-    margin-bottom:40px;
-    filter: brightness(270%) hue-rotate(104deg) saturate(1000%) contrast(1000%); /*note: filter:opacity affects child elements (ie. img)*/
+.wrapper2{ 
+    font-size:20px;
+    width:800px; 
+    margin: 0 auto;
 }
-section{
-    background-color: rgba(3, 89, 182, 0.29); /*6) Add a background colour using an appropriate colour measurement.*/
-    padding: 20px;
-}
-
-img:hover{ /*4) responsive image code*/
-    transform: scaleX(-1); /*movement with CSS, no javascript*/
-}
-
-.wrapper{  
-    color: #333; 
-    width: 80vw; /*5) wrapper to 80% of the viewport width*/
-    margin: auto; /*centers wrapper to viewport inside wrapper*/
-    padding: 41px;
-    border-radius: 25px;  
-    background-color: rgba(3, 89, 182, 0.29); /*5) Add a background colour and border to div.wrapper*/
-} 
-
-.flex{ /*b) div class "flex" added */
-    background: #ccc;
-    height: 431px;
-    max-width: 100%;
-    border-style: inset;
-    padding: 33px;  
-    display: inline-block;
-    vertical-align: middle; /*aligns content to center, vertically */
-    overflow: scroll;
-}
-
-header, footer{
-    background: #777777;
-    height: 60px;
-}
-
-header{
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-}
-
 footer{
-    padding: 10px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    height: 10px;
 }
-
-.wrapper header h1{
-    font-size: 36.9px;
-    text-align: left;
-    padding:10px;
-}  
-
-p {
-    color: #000000; /*e) all except p class are color #333 --- element selector (2)*/
-}
-
-ol {
-    list-style-position: inside; /*keeps ordered list elements in div .flex inside box*/
-}
-
-li:nth-of-type(odd) { /*c) every odd bullet point bold --- pseudo element selector (3) */
-    font-weight: bold; 
-}
-
-footer p{ /*a) four different types of selectors --- Combinators, Descendant Selector (4) */
-    color: orange;
-    font-size: 14px;
-}
-
-h2 {
-    font-size: 25px; 
+#zen-supporting{
+    background-color: rgba(246, 246, 246, 0.91);
+    height: 100%;
+    width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 10px;
     float:left;
-    padding-left: 10px; 
-} 
+}
+.sidebar{
+    background-color: rgba(246, 246, 246, 0.20); 
+    height: 800px;
+    width: 16%;
+    padding:20px;
+	border-radius: 10px;
+    float:left;
+}
+footer{
+	background-color: rgba(246, 246, 246, 0.91);
+	height:25px;
+	margin-bottom: 20px;
+	color: black;
+    clear:both; /*returns css to normal flow after using float in previous divs*/
+}
+
+/*
+7.) incorporates some type of creative element (hover effect, image filter,
+animation etc.) --------------
+*/
+
+@keyframes appear {
+    0%{
+        opacity: 15%;
+		transform: rotate(0);
+    }
+    25%{
+        opacity: 25%;
+    }
+    50%{
+        color: blueviolet;
+    }
+    75%{
+        opacity: 45%;
+    }
+    100%{
+        opacity: 100%;
+		transform: rotate(360deg);
+    }
+}
+
+header h1:hover{
+	filter: invert(0.5);
+	animation-name: appear;
+    animation-duration: 3s;
+}
+
+	
