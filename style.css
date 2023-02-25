@@ -7,7 +7,6 @@
 
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
-
 /* basic elements */
 html {
 	margin: 0;
@@ -281,21 +280,18 @@ units*/
 /*i.) /*First custom webfont - Externally hosted web-font*/
 @font-face {
     font-family: 'Architects Daughter';
-    font-style: normal;
-    font-weight: 100;
-    font-display: swap;
+    font-weight: 149;
     src: url(https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4w.woff2) format('woff2');
 }
 h1, h2, h3 {
-    font-family:'Architects Daughter', cursive; 
+    font-family:'Architects Daughter', sans-serif; 
 	font-weight: bold;  
 }
 /*ii.) Second custom webfont - locally hosted web-font */
 @font-face {
     font-family: 'open_sansregular';
+	font-weight: 149;
     src: url('assets/OpenSans-Regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 p, table{
     font-family: 'open_sansregular', sans-serif;
@@ -373,5 +369,7 @@ header h1:hover{
 	animation-name: appear;
     animation-duration: 3s;
 }
+
+	
 
 	
