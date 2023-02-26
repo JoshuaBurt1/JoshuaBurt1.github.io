@@ -1,255 +1,81 @@
-/* css Zen Garden default style v1.02 */
-/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/*1.) includes a CSS file that contains valid, well-formatted, error-free CSS and
+helpful comments where applicable.*/
 
-/* This file based on 'Tranquille' by Dave Shea */
-/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
-/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
-
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-
-/* basic elements */
-html {
-	margin: 0;
-	padding: 0;
-	}
-p { 
-	margin-top: 0; 
-	text-align: justify;
-	}
-h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
-	letter-spacing: 1px; 
-	margin-bottom: 0; 
-	color: #7D775C;
-	}
-a:link { 
+/*Navigation*/
+a { /*removes underline beneath all links*/
+    text-decoration: none;
+	background-color: whitesmoke;
+}
+a:link {  /*removes underline beneath all links*/
 	font-weight: bold; 
-	text-decoration: none; 
-	color: #5116d0;
 	}
-a:visited { 
+a:visited {  /*visited links are grey*/
 	font-weight: bold; 
-	text-decoration: none; 
-	color: #89858f;
+	color: grey;
 	}
-a:hover, a:focus, a:active { 
+a:hover, a:focus, a:active {  /*hovering and active links are underlined*/
 	text-decoration: underline; 
-	color: #190544;
 	}
-abbr {
-	border-bottom: none;
-	}
-
-
-/* specific divs */
-
-.intro { 
-	min-width: 470px;
-	width: 100%;
-	}
-
-header h1 { 
-	background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
-	margin-top: 10px;
-	display: block;
-	width: 219px;
-	height: 87px;
-	float: left;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-
-header h2 { 
-	background: transparent url(http://csszengarden.com/001/h2.gif) no-repeat top left; 
-	margin-top: 58px; 
-	margin-bottom: 40px; 
-	width: 200px; 
-	height: 18px; 
-	float: right;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-header {
-	padding-top: 20px;
-	height: 87px;
+a:hover{ /*Hovering over links changes background color to show it is clickable*/
+	background-color: #fd1970;
+    color: #fff;
 }
 
-.summary {
-	clear: both; 
-	margin: 20px 20px 20px 10px; 
-	width: 250px; 
-	height: 250px;
-	border-radius: 10px;
-	font-weight: bold;
-	background-color: rgba(246, 246, 246, 0.91); 
-	float: left;
-	}
-.summary p {
-	font: italic 1.1em/2.2 georgia; 
-	text-align: center;
-	}
-
-.preamble {
-	clear: right; 
-	padding: 0px 10px 0 10px;
-	}
-.supporting {	
-	padding-left: 10px; 
-	margin-bottom: 40px;
-
-	}
-
-footer { 
-	text-align: center; 
-	}
-footer a:link, footer a:visited { 
-	margin-right: 20px; 
-	}
-
-.sidebar {
-	margin-left: 600px; 
-	position: absolute; 
-	top: 0; 
-	right: 0;
-	float:left;	
-	}
-.sidebar .wrapper { 
-	font: 10px verdana, sans-serif; 
-	background: whitesmoke top left repeat-y; 
-	padding: 10px; 
-	margin-top: 150px; 
-	width: 130px; 
-	}
-.sidebar h3.select { 
-	background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left; 
-	margin: 10px 0 5px 0; 
-	width: 97px; 
-	height: 16px; 
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.archives { 
-	background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:57px; 
-	height: 14px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.resources { 
-	margin: 25px 0 5px 0; 
-	width:63px; 
-	height: 10px; 
-	background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left; 
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-
-
-.sidebar ul {
-	margin: 0;
-	padding: 0;
-	}
-.sidebar li {
-	line-height: 1.3em; 
-	background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center; 
-	display: block; 
-	padding-top: 5px; 
-	margin-bottom: 5px;
-	list-style-type: none;
-	}
-.sidebar li a:link {
-	color: #988F5E;
-	}
-.sidebar li a:visited {
-	color: #B3AE94;
-	}
-
-
-.extra1 {
-	position: absolute; 
-	top: 40px; 
-	right: 0; 
-	width: 148px; 
-	height: 110px;
-	}
-
-	/*
-	1.) includes a CSS file that contains valid, well-formatted, error-free CSS and
-helpful comments where applicable.  -----------
-
-2.) includes at least one example of a type selector, a class selector, an id
+/*2.) includes at least one example of a type selector, a class selector, an id
 selector, an attribute selector, a pseudo-class selector or pseudo-element
 selector, a descendant combinator, a child combinator, a direct sibling
-combinator and a general sibling combinator. ----------
-*/
-/*type selector --> all h3 tags have increased font size*/
-h3 {
-	font-size: 2em;
-}
+combinator and a general sibling combinator. */
 
-/*class selector --> all .wrapper classes have property and value changed */
-.wrapper {
-	border: red 2px dashed;
-	padding: 5px;
+h3 { /*type selector --> all h3 tags have increased font size*/
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color:black;
 }
-/*id selector --> all #zen-summary classes have property and value changed*/
-#zen-summary {
+.wrapper { /*class selector --> all .wrapper classes have property and value changed */
+	border: red 2px dotted;
+}
+#zen-summary { /*id selector --> all #zen-summary classes have property and value changed*/
 	border: red 2px solid;
 	padding: 5px;
   }
-/*attribute selector --> selects href matching "/example/index"  */
-a[href="/examples/index"] {
-	color: black;
-	font-size: 1.5em;
+a[href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/"] { /*attribute selector --> selects href matching "/example/index"*/
+	text-shadow: 0 0 3px #ff008c, 0 0 3px #6a00ff;
   }
-
-/*pseudo-class selecto --> every other p selector is colored red*/
-p:nth-of-type(2n) {
+p:nth-of-type(2n) { /*pseudo-class selecto --> every other p selector is colored red*/
 	color:red;
 }
-
-/*pseudo-element selector --> first letter of every p  */
-p::first-letter {
-    font-size: 1.8em;
+p::first-letter { /*pseudo-element selector --> first letter of every p  */
+    font-size: 1.6em;
     font-weight: bold;
 }   
-
-/*descendant combinator --> highlights a selector if a descendant of p*/
-p a{
-	background-color: whitesmoke;
+.sidebar .wrapper .design-selection nav ul li a{ /*descendant combinator --> highlights a selector if a descendant of .sidebar*/
     font-style: italic;
+	color: goldenrod;
 }
-/*child combinator --> affects child of .pramble selector*/
-.preamble > h3 {
+.sidebar .wrapper .design-archives nav ul li a{
+    font-style: italic;
+	color: goldenrod;
+}
+.sidebar .wrapper .zen-resources ul li a{
+    font-style: italic;
+	color: goldenrod;
+}
+.preamble > h3 { /*child combinator --> affects child of .pramble selector*/
 	font-size: 3em;
-	text-shadow: 0 0 2px #FF0000, 0 0 2px #0000FF; 
-  }
-
-/*direct sibling combinator --> affects the direct sibling of h3 (first paragraph selector)*/
-h3 + p {
+	text-shadow: 0 0 3px #ff008c, 0 0 3px #6a00ff;
+	margin-bottom:30px;
+}
+h3 + p { /*direct sibling combinator --> affects the direct sibling of h3 (first paragraph selector)*/
 	font-weight: bold;
-  }
-
-/*general sibling combinator --> if p is a sibling of h3 (all p), then color will change */
-h3 ~ p{
+}
+h3 ~ p{ /*general sibling combinator --> if p is a sibling of h3 (all p), then color will change */
 	color:blueviolet;
-
 }
 
-/*
-3.) incorporates a background image or gradient to enhance visual
-appearance of the interface. --------------
-*/
+/*3.) incorporates a background image or gradient to enhance visual
+appearance of the interface. */
+
 .page-wrapper{
-	background-image: url("assets/blocks.jpg") no-repeat top left; 
 	padding: 0 175px 0 110px;  
 	margin: 0; 
 	position: relative;
@@ -262,30 +88,24 @@ appearance of the interface. --------------
 	border-radius: 10px;
 }
 body { 
-	font-size: 1.8em;
 	background-image: url("assets/blocks2.webp"); /*this is the blue block background image*/
-	font: 75% georgia, sans-serif;
-	line-height: 1.88889;
-	color: #555753;  
-	margin: 0; 
-	padding: 0;
+	font: 13px verdana, sans-serif;
+	line-height: 2.5em;
 }
-/*
-4.) incorporates colour while still maintaining readability/accessibility ------
-*/
+/*4.) incorporates colour while still maintaining readability/accessibility
+  5.) incorporates at two custom web fonts and appropriate font-sizing and units*/
 
-/*
-5.) incorporates at two custom web fonts and appropriate font-sizing and
-units*/
 /*i.) /*First custom webfont - Externally hosted web-font*/
 @font-face {
     font-family: 'Architects Daughter';
     font-weight: 149;
     src: url(https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4w.woff2) format('woff2');
 }
-h1, h2, h3 {
+h1, h2, h3, a[href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/"] {
     font-family:'Architects Daughter', sans-serif; 
-	font-weight: bold;  
+	font-weight: bold;
+	font-style: italic;  
+	font-size: 2em;
 }
 /*ii.) Second custom webfont - locally hosted web-font */
 @font-face {
@@ -295,13 +115,16 @@ h1, h2, h3 {
 }
 p, table{
     font-family: 'open_sansregular', sans-serif;
+	margin-top: 0; 
+	text-align: justify;
 }
 
 /*6.) Demonstrates understanding of the box model through the addition of
-padding and margins to give a sense of space between elements. --------------------
-*/
+padding and margins to give a sense of space between elements. */
 html{
     box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 *,*:before,*:after{
     box-sizing: inherit;
@@ -311,8 +134,39 @@ html{
     width:800px; 
     margin: 0 auto;
 }
-footer{
-    height: 10px;
+.intro { 
+	width: 100%;
+}
+header h1 { 
+	background: transparent url(assets/title.png) no-repeat top left; /*transparent text source: https://www.textstudio.com/logo/transparent-text-with-shadow-173 */
+	width: 80%;
+	height: 150px;
+	float: left;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+header h2 { 
+	margin-bottom: 20px; 
+	width: 25%; 
+	height: 18px; 
+	float: left;
+	white-space: nowrap;
+}
+.summary {
+	clear: both; 
+	margin: 30px 20px;
+	width: 90%; 
+	border-radius: 10px;
+	font-weight: bold;
+	background-color: rgba(246, 246, 246, 0.91); 
+	float: left;
+}
+.preamble {
+	clear: both; 
+}
+.supporting {	 
+	margin-bottom: 100px;
 }
 #zen-supporting{
     background-color: rgba(246, 246, 246, 0.91);
@@ -324,52 +178,81 @@ footer{
     float:left;
 }
 .sidebar{
-    background-color: rgba(246, 246, 246, 0.20); 
-    height: 800px;
+    background-color: rgba(246, 246, 246, 0.50); 
+    height: 100%;
     width: 16%;
     padding:20px;
+	margin-left: 10px;
 	border-radius: 10px;
-    float:left;
+	position: absolute; 
+	top: 0; 
+	right: 0;
+	float:left;	
+}
+.sidebar .wrapper { 
+	background: whitesmoke; 
+	padding: 10px;  
+	width: 150px; 
+}
+.sidebar h3.select { 
+	font-size: 1em;
+	margin: 0px 0px 10px 0px; 
+	width: 150px; 
+	height: 20px; 
+}
+.sidebar h3.archives { 
+	font-size: 1em;
+	margin: 10px 0px;
+	width: 60px; 
+	height: 20px; 
+}
+.sidebar h3.resources { 
+	font-size: 1em;
+	margin: 10px 0px;
+	width:60px; 
+	height: 20px; 
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+.sidebar li {
+	line-height: 1.25em; 
+	padding-top: 5.5px; 
+	margin-bottom: 5.5px;
 }
 footer{
 	background-color: rgba(246, 246, 246, 0.91);
+	text-align: center; 
+	height: 10px;
 	height:25px;
 	margin-bottom: 20px;
 	color: black;
     clear:both; /*returns css to normal flow after using float in previous divs*/
 }
+footer a{ 
+	margin-inline: 20px; 
+}
 
-/*
-7.) incorporates some type of creative element (hover effect, image filter,
-animation etc.) --------------
-*/
+/*7.) incorporates some type of creative element (hover effect, image filter,
+animation etc.) */
 
-@keyframes appear {
-    0%{
-        opacity: 15%;
-		transform: rotate(0);
-    }
-    25%{
-        opacity: 25%;
-    }
-    50%{
-        color: blueviolet;
-    }
-    75%{
-        opacity: 45%;
-    }
-    100%{
-        opacity: 100%;
-		transform: rotate(360deg);
-    }
+@keyframes pulse {
+	0% { 
+		transform: scale(1) 
+	}
+	50%{
+		transform: scale(1.25);
+	}
+	100% { 
+		transform: scale(1);
+	}
 }
 
 header h1:hover{
-	filter: invert(0.5);
-	animation-name: appear;
+	animation-name: pulse;
     animation-duration: 3s;
 }
-
-	
 
 	
