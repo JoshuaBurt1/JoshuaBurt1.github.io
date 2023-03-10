@@ -1,258 +1,185 @@
-/*1.) includes a CSS file that contains valid, well-formatted, error-free CSS and
-helpful comments where applicable.*/
+/*
+You've been provided with some raw HTML for the homepage of an imaginary community college, 
+plus some CSS that styles the page into a three column layout and provides some other rudimentary styling. 
+You're to write your CSS additions below the comment at the bottom of the CSS file to make sure it's easy to mark the bits you've done.
+ Don't worry if some of the selectors are repetitious; we'll let you off in this instance.
+*/
+/* WRITE YOUR CODE BELOW HERE */
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+  line-height: 2.1rem; /*Give your body text a suitable line-height.*/
+  letter-spacing: 0.1rem;
+  word-spacing: 0.2rem; /*Give your body text some letter-spacing and word-spacing, as appropriate.*/
+}
+  
+/* Layout */
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+/*Links:*/
+a{
+  outline: none; /*Remove the default focus outline from ALL the links on the page.*/
+  text-decoration:underline;
+  color: #a66; /*Give the link, visited, focus, and hover states some colors that go with the color of the horizontal bars at the top and bottom of the page.*/
+}
+
+a[href^="#"]:after { /*Make it so that external links have the external link icon inserted next to them.*/
+  content: "";
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 1em;
+  height: 1em;
+  margin: 0 .2em;
+  background-size: contain;
+  background-image: url("assets/external-link-52.png");
+}
+a[href^="https"]:after {
+  content: "";
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 1em;
+  height: 1em;
+  margin: 0 .2em;
+  background-size: contain;
+  background-image: url("assets/external-link-52.png");
+}
+
+a:hover{ /*Make it so that links are underlined by default, but when you hover or focus them the underline disappears.*/
+  text-decoration:none;
+  color: #a66; 
+}
+
+a:focus{
+  text-decoration:none;
+  color: #a66;
+}
+a:active{ /*Give the active state a noticeably different styling so it stands out nicely, but make it still fit in with the overall page design.*/
+  color: white; 
+  background-color: black;
+}
 
 /*Navigation*/
-a { /*removes underline beneath all links*/
-    text-decoration: none;
-	background-color: whitesmoke;
+/*You don't necessarily have to make the nav menu look like buttons, 
+but it needs to be a bit taller so that it doesn't look silly on the side of the page; 
+also remember that you need to make this one a vertical nav menu.*/
+
+nav {
+  float: left;
+  width: 19%;
 }
-a:link {  /*removes underline beneath all links*/
-	font-weight: bold; 
-	}
-a:visited {  /*visited links are grey*/
-	font-weight: bold; 
-	color: grey;
-	}
-a:hover, a:focus, a:active {  /*hovering and active links are underlined*/
-	text-decoration: underline; 
-	}
-a:hover{ /*Hovering over links changes background color to show it is clickable*/
-	background-color: #fd1970;
-    color: #fff;
+nav a {
+  outline: none;
+  padding: 10px;
+  line-height: 6.9;
+  font-weight: 792;
+  border-style: solid;
+  background-color: whitesmoke; 
 }
 
-/*2.) includes at least one example of a type selector, a class selector, an id
-selector, an attribute selector, a pseudo-class selector or pseudo-element
-selector, a descendant combinator, a child combinator, a direct sibling
-combinator and a general sibling combinator. */
-
-h3 { /*type selector --> all h3 tags have increased font size*/
-	letter-spacing: 1px; 
-	margin-bottom: 0; 
-	color:black;
-}
-.wrapper { /*class selector --> all .wrapper classes have property and value changed */
-	border: red 2px dotted;
-}
-#zen-summary { /*id selector --> all #zen-summary classes have property and value changed*/
-	border: red 2px solid;
-	padding: 5px;
-  }
-a[href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/"] { /*attribute selector --> selects href matching "/example/index"*/
-	text-shadow: 0 0 3px #ff008c, 0 0 3px #6a00ff;
-  }
-p:nth-of-type(2n) { /*pseudo-class selecto --> every other p selector is colored red*/
-	color:red;
-}
-p::first-letter { /*pseudo-element selector --> first letter of every p  */
-    font-size: 1.6em;
-    font-weight: bold;
-}   
-.sidebar .wrapper .design-selection nav ul li a{ /*descendant combinator --> highlights a selector if a descendant of .sidebar*/
-    font-style: italic;
-	color: goldenrod;
-}
-.sidebar .wrapper .design-archives nav ul li a{
-    font-style: italic;
-	color: goldenrod;
-}
-.sidebar .wrapper .zen-resources ul li a{
-    font-style: italic;
-	color: goldenrod;
-}
-.preamble > h3 { /*child combinator --> affects child of .pramble selector*/
-	font-size: 3em;
-	text-shadow: 0 0 3px #ff008c, 0 0 3px #6a00ff;
-	margin-bottom:30px;
-}
-h3 + p { /*direct sibling combinator --> affects the direct sibling of h3 (first paragraph selector)*/
-	font-weight: bold;
-}
-h3 ~ p{ /*general sibling combinator --> if p is a sibling of h3 (all p), then color will change */
-	color:blueviolet;
+nav a:visited {
+  color: #a66;
 }
 
-/*3.) incorporates a background image or gradient to enhance visual
-appearance of the interface. */
+nav a:focus { 
+  border: 1px #a66;
+}
 
-.page-wrapper{
-	padding: 0 175px 0 110px;  
-	margin: 0; 
-	position: relative;
-	max-width: 57vw;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: rgba(246, 246, 246, 0.91); /*this is the translucent white page wrapper*/
-	margin-top: 10em;
-	margin-bottom: 10em;
-	border-radius: 10px;
+nav a:hover {
+  text-decoration:none;
 }
-body { 
-	background-image: url("assets/blocks2.webp"); /*this is the blue block background image*/
-	font: 13px verdana, sans-serif;
-	line-height: 2.5em;
-}
-/*4.) incorporates colour while still maintaining readability/accessibility
-  5.) incorporates at two custom web fonts and appropriate font-sizing and units*/
 
-/*i.) /*First custom webfont - Externally hosted web-font*/
-@font-face {
-    font-family: 'Architects Daughter';
-    font-weight: 149;
-    src: url(https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4w.woff2) format('woff2');
+nav a:active {
+  border: 1px #a66;
 }
-h1, h2, h3, a[href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/"] {
-    font-family:'Architects Daughter', sans-serif; 
-	font-weight: bold;
-	font-style: italic;  
-	font-size: 2em;
+/* ***** */
+
+footer {
+  clear: both;
 }
-/*ii.) Second custom webfont - locally hosted web-font */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /*Center your top level heading on the page.*/
+  letter-spacing: .2rem;/*Give your headings a little bit of letter-spacing to make them not too squashed, and allow the letters to breathe a bit.*/
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+  font-size: 1.25rem; /*Give your headings and other element types appropriate font-sizes defined using a suitable relative unit.*/
+}
+
+section h2 + p{ /*direct sibling combinator --> affects the direct sibling of h2 (first paragraph selector)*/
+text-indent: 20px; /*Give the first paragraph after each heading in the <section> a little bit of text-indentation, say 20px.*/
+}
+
+/* header and footer */
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/*Lists:*/
+ul li{
+  line-height: 2.1rem; /*Make sure the spacing of your lists and list items works well with the styling of the overall page. Each list item should have the same line-height as a paragraph line, and each list should have the same spacing at its top and bottom as you have between paragraphs.*/
+/*Give your list items a nice bullet appropriate for the design of the page. It is up to you whether you choose a custom bullet image or something else.*/
+}
+ul li::marker {
+  content: "▶";
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 10px; /*Give the page a site-wide font-size of 10px.*/
+}  
+
+/*
+Fonts:
+First of all, download a couple of free-to-use fonts. Because this is a college, 
+the fonts should be chosen to give the page a fairly serious, formal, trustworthy feel: 
+> Use a suitable service to generate bulletproof @font-face code for these two fonts.
+> Apply your body font to the whole page, 
+>and your heading font to your headings.
+*/
+
+/*i.) /* a serif site-wide font for the general body text */
 @font-face {
     font-family: 'open_sansregular';
-	font-weight: 149;
-    src: url('assets/OpenSans-Regular-webfont.woff') format('woff');
+	  font-weight: 149;
+    src: url('Assets/open-sans.regular.ttf') format('truetype');
 }
-p, table{
+body{
     font-family: 'open_sansregular', sans-serif;
 	margin-top: 0; 
 	text-align: justify;
 }
+/*coupled with a sans-serif or slab serif for the headings might be nice.*/
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 500;
+  src: url('Assets/PTSerif-Bold.ttf') format('truetype');
+}
+h2{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 3rem;
+}
+h1{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 4rem;
+} 
 
-/*6.) Demonstrates understanding of the box model through the addition of
-padding and margins to give a sense of space between elements. */
-html{
-    box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-*,*:before,*:after{
-    box-sizing: inherit;
-}
-.wrapper2{ 
-    font-size:20px;
-    width:800px; 
-    margin: 0 auto;
-}
-.intro { 
-	width: 100%;
-}
-header h1 { 
-	background: transparent url(assets/title.png) no-repeat top left; /*transparent text source: https://www.textstudio.com/logo/transparent-text-with-shadow-173 */
-	width: 80%;
-	height: 150px;
-	float: left;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-header h2 { 
-	margin-bottom: 20px; 
-	width: 25%; 
-	height: 18px; 
-	float: left;
-	white-space: nowrap;
-}
-.summary {
-	clear: both; 
-	margin: 30px 20px;
-	width: 90%; 
-	border-radius: 10px;
-	font-weight: bold;
-	background-color: rgba(246, 246, 246, 0.91); 
-	float: left;
-}
-.preamble {
-	clear: both; 
-}
-.supporting {	 
-	margin-bottom: 100px;
-}
-#zen-supporting{
-    background-color: rgba(246, 246, 246, 0.91);
-    height: 100%;
-    width: 100%;
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 10px;
-    float:left;
-}
-.sidebar{
-    background-color: rgba(246, 246, 246, 0.50); 
-    height: 100%;
-    width: 16%;
-    padding:20px;
-	margin-left: 10px;
-	border-radius: 10px;
-	position: absolute; 
-	top: 0; 
-	right: 0;
-	float:left;	
-}
-.sidebar .wrapper { 
-	background: whitesmoke; 
-	padding: 10px;  
-	width: 150px; 
-}
-.sidebar h3.select { 
-	font-size: 1em;
-	margin: 0px 0px 10px 0px; 
-	width: 150px; 
-	height: 20px; 
-}
-.sidebar h3.archives { 
-	font-size: 1em;
-	margin: 10px 0px;
-	width: 60px; 
-	height: 20px; 
-}
-.sidebar h3.resources { 
-	font-size: 1em;
-	margin: 10px 0px;
-	width:60px; 
-	height: 20px; 
-}
-
-.sidebar ul {
-	margin: 0;
-	padding: 0;
-}
-.sidebar li {
-	line-height: 1.25em; 
-	padding-top: 5.5px; 
-	margin-bottom: 5.5px;
-}
-footer{
-	background-color: rgba(246, 246, 246, 0.91);
-	text-align: center; 
-	height: 10px;
-	height:25px;
-	margin-bottom: 20px;
-	color: black;
-    clear:both; /*returns css to normal flow after using float in previous divs*/
-}
-footer a{ 
-	margin-inline: 20px; 
-}
-
-/*7.) incorporates some type of creative element (hover effect, image filter,
-animation etc.) */
-
-@keyframes pulse {
-	0% { 
-		transform: scale(1) 
-	}
-	50%{
-		transform: scale(1.25);
-	}
-	100% { 
-		transform: scale(1);
-	}
-}
-
-header h1:hover{
-	animation-name: pulse;
-    animation-duration: 3s;
-}
-
-	
